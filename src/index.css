@@ -144,7 +144,7 @@
   }
 
   .gradient-sidebar {
-    @apply bg-gradient-to-b from-sidebar-background to-[hsl(226,71%,15%)];
+    background: linear-gradient(to bottom, hsl(var(--sidebar-background)), hsl(226, 71%, 15%));
   }
 
   .status-present {
