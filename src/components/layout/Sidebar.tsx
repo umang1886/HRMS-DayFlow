@@ -59,7 +59,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
   return (
     <aside
       className={cn(
-        'h-screen sticky top-0 gradient-sidebar flex flex-col transition-all duration-300 shadow-sidebar relative',
+        'min-h-screen gradient-sidebar flex flex-col transition-all duration-300 shadow-sidebar relative',
         collapsed ? 'w-20' : 'w-64'
       )}
     >
