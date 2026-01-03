@@ -196,6 +196,19 @@ const Auth: React.FC = () => {
 
                 <form onSubmit={handleLogin} className="space-y-5">
                   <div className="space-y-2">
+                    <Label htmlFor="login-role" className="text-sm font-medium">Role</Label>
+                    <Select defaultValue="employee">
+                      <SelectTrigger className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl">
+                        <SelectValue placeholder="Select role" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl z-50">
+                        <SelectItem value="employee" className="rounded-lg">Employee</SelectItem>
+                        <SelectItem value="admin" className="rounded-lg">Admin / HR</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
                     <Label htmlFor="login-email" className="text-sm font-medium">Email</Label>
                     <Input
                       id="login-email"
