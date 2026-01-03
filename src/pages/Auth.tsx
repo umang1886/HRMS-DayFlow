@@ -4,10 +4,9 @@ import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Building2, Loader2, Eye, EyeOff, Mail, Lock, User, IdCard } from 'lucide-react';
+import { Building2, Loader2, Eye, EyeOff, Users, LayoutDashboard } from 'lucide-react';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
@@ -124,212 +123,246 @@ const Auth: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen flex flex-col lg:flex-row">
+      {/* Left Panel - Branding */}
+      <div className="lg:w-1/2 gradient-sidebar p-8 lg:p-12 flex flex-col justify-between min-h-[40vh] lg:min-h-screen relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+        
         {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl gradient-primary shadow-lg mb-4">
-            <Building2 className="w-8 h-8 text-primary-foreground" />
+        <div className="flex items-center gap-3 relative z-10">
+          <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20 shadow-lg">
+            <Building2 className="w-6 h-6 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-foreground">Dayflow</h1>
-          <p className="text-muted-foreground">Human Resource Management System</p>
+          <span className="text-xl font-bold text-white">Dayflow</span>
         </div>
 
-        <Card className="shadow-xl border-border/50">
-          <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <CardHeader className="pb-4">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="login">Login</TabsTrigger>
-                <TabsTrigger value="signup">Sign Up</TabsTrigger>
-              </TabsList>
-            </CardHeader>
+        {/* Main content */}
+        <div className="relative z-10 my-8 lg:my-0">
+          <h1 className="text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            Human Resource<br />Management System
+          </h1>
+          <p className="text-white/70 text-lg max-w-md leading-relaxed">
+            Streamline your HR operations with our comprehensive solution for attendance, leave management, payroll, and more.
+          </p>
 
-            <TabsContent value="login">
-              <form onSubmit={handleLogin}>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-center">
-                    Welcome back! Please sign in to continue.
-                  </CardDescription>
+          {/* Feature badges */}
+          <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 transition-all hover:bg-white/15 hover:scale-105 cursor-default">
+              <Users className="w-5 h-5 text-white/80" />
+              <span className="text-white/90 font-medium">Employee Portal</span>
+            </div>
+            <div className="flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 transition-all hover:bg-white/15 hover:scale-105 cursor-default">
+              <LayoutDashboard className="w-5 h-5 text-white/80" />
+              <span className="text-white/90 font-medium">Admin Dashboard</span>
+            </div>
+          </div>
+        </div>
 
+        {/* Footer */}
+        <div className="relative z-10 hidden lg:block">
+          <p className="text-white/50 text-sm">© 2026 Dayflow. All rights reserved.</p>
+        </div>
+      </div>
+
+      {/* Right Panel - Forms */}
+      <div className="lg:w-1/2 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 p-6 lg:p-12 flex items-center justify-center">
+        <div className="w-full max-w-md animate-fade-in">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            {/* Tabs */}
+            <TabsList className="grid w-full grid-cols-2 mb-8 p-1 bg-white dark:bg-slate-800 shadow-md rounded-xl h-14">
+              <TabsTrigger 
+                value="login" 
+                className="rounded-lg text-base font-medium data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all h-12"
+              >
+                Login
+              </TabsTrigger>
+              <TabsTrigger 
+                value="signup"
+                className="rounded-lg text-base font-medium data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md transition-all h-12"
+              >
+                Sign Up
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Login Form */}
+            <TabsContent value="login" className="mt-0">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 border border-slate-200/50 dark:border-slate-700/50">
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-foreground">Welcome back</h2>
+                  <p className="text-muted-foreground mt-1">Enter your credentials to sign in</p>
+                </div>
+
+                <form onSubmit={handleLogin} className="space-y-5">
                   <div className="space-y-2">
-                    <Label htmlFor="login-email">Email</Label>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <Input
-                        id="login-email"
-                        type="email"
-                        placeholder="you@company.com"
-                        value={loginEmail}
-                        onChange={(e) => setLoginEmail(e.target.value)}
-                        className="pl-10"
-                        required
-                      />
-                    </div>
+                    <Label htmlFor="login-email" className="text-sm font-medium">Email</Label>
+                    <Input
+                      id="login-email"
+                      type="email"
+                      placeholder="name@company.com"
+                      value={loginEmail}
+                      onChange={(e) => setLoginEmail(e.target.value)}
+                      className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all"
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="login-password">Password</Label>
+                    <Label htmlFor="login-password" className="text-sm font-medium">Password</Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                       <Input
                         id="login-password"
                         type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••"
                         value={loginPassword}
                         onChange={(e) => setLoginPassword(e.target.value)}
-                        className="pl-10 pr-10"
+                        className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl pr-12 focus:ring-2 focus:ring-primary/20 transition-all"
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                       >
-                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                       </button>
                     </div>
                   </div>
-                </CardContent>
 
-                <CardFooter>
-                  <Button type="submit" className="w-full gradient-primary" disabled={isSubmitting}>
+                  <Button 
+                    type="submit" 
+                    className="w-full h-12 gradient-primary text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98]" 
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                         Signing in...
                       </>
                     ) : (
                       'Sign In'
                     )}
                   </Button>
-                </CardFooter>
-              </form>
+                </form>
+              </div>
             </TabsContent>
 
-            <TabsContent value="signup">
-              <form onSubmit={handleSignup}>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-center">
-                    Create your account to get started.
-                  </CardDescription>
+            {/* Signup Form */}
+            <TabsContent value="signup" className="mt-0">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 border border-slate-200/50 dark:border-slate-700/50">
+                <div className="mb-6">
+                  <h2 className="text-2xl font-bold text-foreground">Create an account</h2>
+                  <p className="text-muted-foreground mt-1">Enter your details to get started</p>
+                </div>
 
+                <form onSubmit={handleSignup} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="signup-role">Role</Label>
+                    <Label htmlFor="signup-role" className="text-sm font-medium">Role</Label>
                     <Select value={signupRole} onValueChange={(v) => setSignupRole(v as 'employee' | 'admin')}>
-                      <SelectTrigger className="bg-card">
+                      <SelectTrigger className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl">
                         <SelectValue placeholder="Select role" />
                       </SelectTrigger>
-                      <SelectContent className="bg-card border-border z-50">
-                        <SelectItem value="employee">Employee</SelectItem>
-                        <SelectItem value="admin">Admin / HR</SelectItem>
+                      <SelectContent className="bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-xl z-50">
+                        <SelectItem value="employee" className="rounded-lg">Employee</SelectItem>
+                        <SelectItem value="admin" className="rounded-lg">Admin / HR</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-name">Full Name</Label>
-                    <div className="relative">
-                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <Input
-                        id="signup-name"
-                        type="text"
-                        placeholder="John Doe"
-                        value={signupFullName}
-                        onChange={(e) => setSignupFullName(e.target.value)}
-                        className="pl-10"
-                        required
-                      />
-                    </div>
+                    <Label htmlFor="signup-name" className="text-sm font-medium">Full Name</Label>
+                    <Input
+                      id="signup-name"
+                      type="text"
+                      placeholder="John Doe"
+                      value={signupFullName}
+                      onChange={(e) => setSignupFullName(e.target.value)}
+                      className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all"
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-employee-id">Employee ID</Label>
-                    <div className="relative">
-                      <IdCard className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <Input
-                        id="signup-employee-id"
-                        type="text"
-                        placeholder="EMP-001"
-                        value={signupEmployeeId}
-                        onChange={(e) => setSignupEmployeeId(e.target.value)}
-                        className="pl-10"
-                        required
-                      />
-                    </div>
+                    <Label htmlFor="signup-employee-id" className="text-sm font-medium">Employee ID</Label>
+                    <Input
+                      id="signup-employee-id"
+                      type="text"
+                      placeholder="EMP-001"
+                      value={signupEmployeeId}
+                      onChange={(e) => setSignupEmployeeId(e.target.value)}
+                      className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all"
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-email">Email</Label>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <Input
-                        id="signup-email"
-                        type="email"
-                        placeholder="you@company.com"
-                        value={signupEmail}
-                        onChange={(e) => setSignupEmail(e.target.value)}
-                        className="pl-10"
-                        required
-                      />
-                    </div>
+                    <Label htmlFor="signup-email" className="text-sm font-medium">Email</Label>
+                    <Input
+                      id="signup-email"
+                      type="email"
+                      placeholder="name@company.com"
+                      value={signupEmail}
+                      onChange={(e) => setSignupEmail(e.target.value)}
+                      className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all"
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-password">Password</Label>
+                    <Label htmlFor="signup-password" className="text-sm font-medium">Password</Label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                       <Input
                         id="signup-password"
                         type={showPassword ? 'text' : 'password'}
                         placeholder="••••••••"
                         value={signupPassword}
                         onChange={(e) => setSignupPassword(e.target.value)}
-                        className="pl-10 pr-10"
+                        className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl pr-12 focus:ring-2 focus:ring-primary/20 transition-all"
                         required
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                       >
-                        {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                        {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                       </button>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-confirm-password">Confirm Password</Label>
-                    <div className="relative">
-                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                      <Input
-                        id="signup-confirm-password"
-                        type="password"
-                        placeholder="••••••••"
-                        value={signupConfirmPassword}
-                        onChange={(e) => setSignupConfirmPassword(e.target.value)}
-                        className="pl-10"
-                        required
-                      />
-                    </div>
+                    <Label htmlFor="signup-confirm-password" className="text-sm font-medium">Confirm Password</Label>
+                    <Input
+                      id="signup-confirm-password"
+                      type="password"
+                      placeholder="••••••••"
+                      value={signupConfirmPassword}
+                      onChange={(e) => setSignupConfirmPassword(e.target.value)}
+                      className="h-12 bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all"
+                      required
+                    />
                   </div>
-                </CardContent>
 
-                <CardFooter>
-                  <Button type="submit" className="w-full gradient-primary" disabled={isSubmitting}>
+                  <Button 
+                    type="submit" 
+                    className="w-full h-12 gradient-primary text-base font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] active:scale-[0.98] mt-2" 
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                         Creating account...
                       </>
                     ) : (
                       'Create Account'
                     )}
                   </Button>
-                </CardFooter>
-              </form>
+                </form>
+              </div>
             </TabsContent>
           </Tabs>
-        </Card>
+        </div>
       </div>
     </div>
   );
