@@ -154,6 +154,27 @@ Employees can view:
 
 ---
 
+## 🔄 Leave Approval Automation
+
+* The Leave Approval process is automated using **n8n**.
+* When an Admin or HR approves or rejects a leave request from the Admin Panel, an **n8n Webhook** is triggered automatically.
+* Leave request details are sent to the workflow and stored in **Google Sheets** for record management.
+* Based on the leave status (Approved or Rejected), an automated **email notification** is sent to the respective employee.
+* This ensures real-time updates and removes the need for manual email communication.
+
+### Automation Flow
+
+* Admin approves or rejects leave request
+* n8n webhook is triggered
+* Leave data is processed
+* Record is stored in Google Sheet
+* Email notification is sent to employee
+  * Approved → Approval email
+  * Rejected → Rejection email
+   
+---
+
+
 ## 🧩 Future Enhancements
 
 * Advanced analytics and insights
