@@ -1,73 +1,185 @@
-# Welcome to your Lovable project
+# Dayflow – Human Resource Management System (HRMS)
 
-## Project info
+**Every workday, perfectly aligned.**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Dayflow is a modern Human Resource Management System (HRMS) designed to digitize and streamline core HR operations such as employee onboarding, profile management, attendance tracking, leave management, payroll visibility, and approval workflows for Admins and HR officers.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+### 🔐 Authentication & Authorization
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+* Secure **Sign Up / Sign In**
+* Email-based authentication
+* Role-based access control (**Admin/HR** and **Employee**)
+* Password security rules and validation
 
-Changes made via Lovable will be committed automatically to this repo.
+### 👤 User Roles
 
-**Use your preferred IDE**
+#### Admin / HR Officer
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* Manage employees
+* View and approve attendance
+* Approve or reject leave requests
+* View and manage payroll details
+* Access reports and analytics
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+#### Employee
 
-Follow these steps:
+* View personal profile and job details
+* Check attendance (daily/weekly)
+* Apply for leave and track status
+* View salary/payroll details (read-only)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📊 Dashboard
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Employee Dashboard
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+* Quick access to:
 
-**Edit a file directly in GitHub**
+  * Profile
+  * Attendance
+  * Leave Requests
+  * Logout
+* Recent activity and notifications
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Admin / HR Dashboard
 
-**Use GitHub Codespaces**
+* Employee list management
+* Attendance records overview
+* Leave approval panel
+* Ability to switch between employees
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🧾 Employee Profile Management
 
-This project is built with:
+### View Profile
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Employees can view:
 
-## How can I deploy this project?
+* Personal information
+* Job details
+* Salary structure
+* Uploaded documents
+* Profile picture
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Edit Profile
 
-## Can I connect a custom domain to my Lovable project?
+* Employees: Limited fields (address, phone number, profile picture)
+* Admin/HR: Full access to edit employee details
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## ⏱️ Attendance Management
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Attendance Tracking
+
+* Daily and weekly attendance views
+* Check-in / Check-out functionality
+* Attendance status types:
+
+  * Present
+  * Absent
+  * Half-day
+  * Leave
+
+### Attendance Visibility
+
+* Employees: View only their own attendance
+* Admin/HR: View attendance of all employees
+
+---
+
+## 🏖️ Leave & Time-Off Management
+
+### Apply for Leave (Employee)
+
+* Select leave type:
+
+  * Paid Leave
+  * Sick Leave
+  * Unpaid Leave
+* Choose date range
+* Add remarks
+* Track leave status:
+
+  * Pending
+  * Approved
+  * Rejected
+
+### Leave Approval (Admin/HR)
+
+* View all leave requests
+* Approve or reject leave
+* Add comments
+* Real-time updates in employee records
+
+---
+
+## 💰 Payroll & Salary Management
+
+### Employee Payroll View
+
+* Read-only access to salary and payroll details
+
+### Admin Payroll Control
+
+* View payroll of all employees
+* Update salary structure
+* Ensure payroll accuracy
+* Email and notification alerts
+
+---
+
+## 📈 Reports & Analytics
+
+* Attendance reports
+* Salary slips
+* Payroll summaries
+* HR analytics dashboard
+
+---
+
+## 🛠️ System Scope
+
+* Secure authentication system
+* Role-based dashboards
+* Employee lifecycle management
+* Attendance and leave automation
+* Payroll transparency
+
+---
+
+## 🧩 Future Enhancements
+
+* Advanced analytics and insights
+* Automated payroll generation
+* Integration with third-party tools
+* Performance management module
+* Mobile application support
+
+---
+
+## 📐 System Design
+
+* Initial system flow and UI wireframes created using **Excalidraw**
+
+---
+
+## 📌 Project Purpose
+
+The goal of Dayflow is to replace manual HR processes with a centralized, secure, and user-friendly digital platform that improves efficiency, transparency, and accuracy in HR operations.
+
+---
+
+## 📄 License
+
+This project is developed for academic and learning purposes. Licensing details can be added as per project requirements.
+
+---
+
+**Developed with ❤️ for efficient HR management.**
