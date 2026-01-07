@@ -24,6 +24,38 @@ and automated HR workflows for Admins and Employees.
 Dayflow is a modern Human Resource Management System (HRMS) designed to digitize and streamline core HR operations such as employee onboarding, profile management, attendance tracking, leave management, payroll visibility, and approval workflows for Admins and HR officers.
 
 ---
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Node.js** 18.x or higher
+- **npm** / **yarn** / **pnpm**
+- **Supabase account** (free tier supported)
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/umang1886/HRMS-DayFlow.git
+cd HRMS-DayFlow
+
+# 2. Install dependencies
+npm install
+
+# 3. Set up environment variables
+cp .env.example .env
+
+# Edit .env with your credentials:
+# VITE_SUPABASE_URL=your_supabase_url
+# VITE_SUPABASE_ANON_KEY=your_anon_key
+
+# 4. Run development server
+npm run dev
+
+# 5. Open your browser
+# Visit http://localhost:5173
+```
+---
 
 ## 📁 Project Structure
 
