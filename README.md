@@ -6,7 +6,11 @@ Dayflow is a modern Human Resource Management System (HRMS) designed to digitize
 
 ---
 
+## 📁 Project Structure
+
+```
 HRMS-DayFlow/
+│
 ├── public/
 │   ├── favicon.ico
 │   ├── placeholder.svg
@@ -17,12 +21,59 @@ HRMS-DayFlow/
 │   │   ├── layout/
 │   │   │   ├── DashboardLayout.tsx
 │   │   │   └── Sidebar.tsx
+│   │   │
 │   │   ├── ui/
+│   │   │   ├── accordion.tsx
+│   │   │   ├── alert-dialog.tsx
+│   │   │   ├── alert.tsx
+│   │   │   ├── aspect-ratio.tsx
+│   │   │   ├── avatar.tsx
+│   │   │   ├── badge.tsx
+│   │   │   ├── breadcrumb.tsx
 │   │   │   ├── button.tsx
+│   │   │   ├── calendar.tsx
 │   │   │   ├── card.tsx
-│   │   │   ├── table.tsx
+│   │   │   ├── carousel.tsx
+│   │   │   ├── chart.tsx
+│   │   │   ├── checkbox.tsx
+│   │   │   ├── collapsible.tsx
+│   │   │   ├── command.tsx
+│   │   │   ├── context-menu.tsx
 │   │   │   ├── dialog.tsx
-│   │   │   └── toast.tsx
+│   │   │   ├── drawer.tsx
+│   │   │   ├── dropdown-menu.tsx
+│   │   │   ├── form.tsx
+│   │   │   ├── hover-card.tsx
+│   │   │   ├── input-otp.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── label.tsx
+│   │   │   ├── menubar.tsx
+│   │   │   ├── navigation-menu.tsx
+│   │   │   ├── pagination.tsx
+│   │   │   ├── popover.tsx
+│   │   │   ├── progress.tsx
+│   │   │   ├── radio-group.tsx
+│   │   │   ├── resizable.tsx
+│   │   │   ├── scroll-area.tsx
+│   │   │   ├── select.tsx
+│   │   │   ├── separator.tsx
+│   │   │   ├── sheet.tsx
+│   │   │   ├── sidebar.tsx
+│   │   │   ├── skeleton.tsx
+│   │   │   ├── slider.tsx
+│   │   │   ├── sonner.tsx
+│   │   │   ├── stat-card.tsx
+│   │   │   ├── switch.tsx
+│   │   │   ├── table.tsx
+│   │   │   ├── tabs.tsx
+│   │   │   ├── textarea.tsx
+│   │   │   ├── toast.tsx
+│   │   │   ├── toaster.tsx
+│   │   │   ├── toggle-group.tsx
+│   │   │   ├── toggle.tsx
+│   │   │   ├── tooltip.tsx
+│   │   │   └── use-toast.ts
+│   │   │
 │   │   └── NavLink.tsx
 │   │
 │   ├── contexts/
@@ -37,23 +88,58 @@ HRMS-DayFlow/
 │   │       ├── client.ts
 │   │       └── types.ts
 │   │
+│   ├── lib/
+│   │   └── utils.ts
+│   │
 │   ├── pages/
 │   │   ├── admin/
-│   │   └── employee/
+│   │   │   ├── Attendance.tsx
+│   │   │   ├── Dashboard.tsx
+│   │   │   ├── Employees.tsx
+│   │   │   ├── Leaves.tsx
+│   │   │   ├── Payroll.tsx
+│   │   │   └── Reports.tsx
+│   │   │
+│   │   ├── employee/
+│   │   │   ├── Attendance.tsx
+│   │   │   ├── Dashboard.tsx
+│   │   │   ├── Leaves.tsx
+│   │   │   ├── Profile.tsx
+│   │   │   └── Reports.tsx
+│   │   │
+│   │   ├── Auth.tsx
+│   │   ├── Index.tsx
+│   │   └── NotFound.tsx
 │   │
+│   ├── App.css
 │   ├── App.tsx
+│   ├── index.css
 │   ├── main.tsx
-│   └── index.css
+│   └── vite-env.d.ts
 │
 ├── supabase/
 │   ├── migrations/
+│   │   ├── 20260103092634_*.sql
+│   │   └── 20260103092644_*.sql
+│   │
 │   └── config.toml
 │
+├── .env
+├── .gitignore
+├── bun.lockb
+├── components.json
+├── eslint.config.js
+├── index.html
 ├── package.json
+├── package-lock.json
+├── postcss.config.js
 ├── tailwind.config.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
 ├── vite.config.ts
 └── README.md
-
+```
 ---
 
 ## 🚀 Features
