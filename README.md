@@ -1,4 +1,23 @@
-# Dayflow – Human Resource Management System (HRMS)
+<div align="center">
+
+# 💼 HRMS-DayFlow
+
+### Smart Human Resource Management System
+---
+[![React](https://img.shields.io/badge/React-Vite-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
+[![n8n](https://img.shields.io/badge/n8n-Automation-FF6D00?style=for-the-badge&logo=n8n)](https://n8n.io/)
+
+A modern HRMS platform for employee management, attendance tracking, leave approvals, payroll visibility,  
+and automated HR workflows for Admins and Employees.
+
+</div>
+
+---
+
+## Dayflow – Human Resource Management System (HRMS)
 
 **Every workday, perfectly aligned.**
 
