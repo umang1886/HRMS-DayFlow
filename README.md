@@ -6,6 +6,56 @@ Dayflow is a modern Human Resource Management System (HRMS) designed to digitize
 
 ---
 
+HRMS-DayFlow/
+├── public/
+│   ├── favicon.ico
+│   ├── placeholder.svg
+│   └── robots.txt
+│
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── DashboardLayout.tsx
+│   │   │   └── Sidebar.tsx
+│   │   ├── ui/
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── table.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   └── toast.tsx
+│   │   └── NavLink.tsx
+│   │
+│   ├── contexts/
+│   │   └── AuthContext.tsx
+│   │
+│   ├── hooks/
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   │
+│   ├── integrations/
+│   │   └── supabase/
+│   │       ├── client.ts
+│   │       └── types.ts
+│   │
+│   ├── pages/
+│   │   ├── admin/
+│   │   └── employee/
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── supabase/
+│   ├── migrations/
+│   └── config.toml
+│
+├── package.json
+├── tailwind.config.ts
+├── vite.config.ts
+└── README.md
+
+---
+
 ## 🚀 Features
 
 ### 🔐 Authentication & Authorization
